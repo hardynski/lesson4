@@ -12,7 +12,6 @@ pipeline {
                dir('lesson7_Jenk') {
                sh "pwd"
                }
-            sh "pwd"
             } 
             }
           }
