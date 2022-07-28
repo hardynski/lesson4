@@ -18,11 +18,16 @@ stage('Docker tag') {
         }
       }
 
-stage('Docker Push') {
-      steps {
-          sh 'docker push hardynski/lesson5:latest'
-      }
-    }
+stage('Publish image to Docker Hub') { 
+ 
+            steps { 
+        withDockerRegistry([ credentialsId: "DockerHub", url: "" ]) { 
+          sh  'docker push hardynski/lesson5:latest' 
+        } 
+ 
+          } 
+        } 
+
 
           }
 }
