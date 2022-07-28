@@ -6,16 +6,6 @@ pipeline {
                checkout scm
                }
             }
-        stage('Change directory') {
-          steps {
-               sh "pwd"
-               dir('lesson7_Jenk') {
-               sh "pwd"
-               }
-            } 
-            }
-
-
         stage('Docker Build') {
           steps {
                sh 'docker build -t ubuntu:latest .'
