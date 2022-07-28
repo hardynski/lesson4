@@ -22,7 +22,7 @@ pipeline {
                dir('lesson7_Jenk') {
                sh "pwd"
                   }
-               sh 'docker build -t shanem/spring-petclinic:latest .'
+               sh 'docker build -t ubuntu:v1 .'
       }
     }
           }
