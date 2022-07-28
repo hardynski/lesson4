@@ -19,8 +19,9 @@ pipeline {
         stage('Docker Build') {
           steps {
                sh "pwd"
-               dir('lesson7_Jenk')
+               dir('lesson7_Jenk') {
                sh "pwd"
+                  }
                sh 'docker build -t shanem/spring-petclinic:latest .'
       }
     }
