@@ -11,5 +11,15 @@ pipeline {
                sh 'docker build -t ubuntu:latest .'
       }
     }
+
+stage('Docker Push') {
+      steps {
+        withCredentials([usernamePassword(credentialsId: 'dockerHub', passwordVariable: 'vudhr42293', usernameVariable: 'hardynski')]) {
+          sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}"
+          sh 'docker push ubuntu:latest'
+        }
+      }
+    }
+
           }
 }
