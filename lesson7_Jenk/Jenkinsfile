@@ -15,7 +15,6 @@ pipeline {
 stage('Docker Push') {
       steps {
         withCredentials([usernamePassword(credentialsId: '76be21d4-a90f-411e-80bb-a3cafb01e672', passwordVariable: 'vudhr42293', usernameVariable: 'hardynski')]) {
-          sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}"
           sh 'docker push ubuntu:latest'
         }
       }
