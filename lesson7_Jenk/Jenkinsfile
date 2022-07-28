@@ -14,7 +14,7 @@ pipeline {
 
 stage('Docker tag') {
       steps {
-           sh 'docker tag ubuntu:v1 hardynski/lesson5:v1'
+           sh 'docker tag ubuntu:latest hardynski/lesson5:latest'
         }
       }
 
